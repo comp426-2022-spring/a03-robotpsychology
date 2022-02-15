@@ -1,0 +1,14 @@
+{
+  "tests": [
+    {
+      "name": "USE CURL TO TEST YOUR CODE (autograder embargoed until 2022-02-22)",
+      "setup": "",
+      "run": "echo \"There are examples of tests that you can do with curl in the assignment instructions. Use them. The autograder is embargoed until 2022-02-22.\"",
+      "input": "",
+      "output": "",
+      "comparison": "included",
+      "timeout": 10,
+      "points": null
+    }
+  ]
+}
