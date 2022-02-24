@@ -59,6 +59,46 @@
       "comparison": "regex",
       "timeout": 10,
       "points": 5000
+    },
+    {
+      "name": "Call a flip heads at endpoint /app/flip/call/heads/",
+      "setup": "",
+      "run": "PORT=\"$(shuf -i 2000-65535 -n 1)\"; (timeout --signal=SIGINT 5 node server.js --port=$PORT; exit 0) & sleep 1s && curl http://localhost:${PORT}/app/flip/call/heads/ && sleep 5s",
+      "input": "",
+      "output": "\\{\"call\":\"heads\",\"flip\":\"(heads|tails)\",\"result\":\"(win|lose)\"\\}",
+      "comparison": "regex",
+      "timeout": 10,
+      "points": 5000
+    },
+    {
+      "name": "Call a flip tails at endpoint /app/flip/call/tails/",
+      "setup": "",
+      "run": "PORT=\"$(shuf -i 2000-65535 -n 1)\"; (timeout --signal=SIGINT 5 node server.js --port=$PORT; exit 0) & sleep 1s && curl http://localhost:${PORT}/app/flip/call/tails/ && sleep 5s",
+      "input": "",
+      "output": "\\{\"call\":\"tails\",\"flip\":\"(heads|tails)\",\"result\":\"(win|lose)\"\\}",
+      "comparison": "regex",
+      "timeout": 10,
+      "points": 5000
+    },
+    {
+      "name": "Header check /app/flip/call/heads/",
+      "setup": "",
+      "run": "PORT=\"$(shuf -i 2000-65535 -n 1)\"; (timeout --signal=SIGINT 5 node server.js --port=$PORT; exit 0) & sleep 1s && curl -I http://localhost:${PORT}/app/flip/call/heads/ && sleep 5s",
+      "input": "",
+      "output": "HTTP\\/(1.1|2)\\s*200\\s*(OK)?",
+      "comparison": "regex",
+      "timeout": 10,
+      "points": 5000
+    },
+    {
+      "name": "Header check /app/flip/call/tails/",
+      "setup": "",
+      "run": "PORT=\"$(shuf -i 2000-65535 -n 1)\"; (timeout --signal=SIGINT 5 node server.js --port=$PORT; exit 0) & sleep 1s && curl -I http://localhost:${PORT}/app/flip/call/tails/ && sleep 5s",
+      "input": "",
+      "output": "HTTP\\/(1.1|2)\\s*200\\s*(OK)?",
+      "comparison": "regex",
+      "timeout": 10,
+      "points": 5000
     }
   ]
 }
