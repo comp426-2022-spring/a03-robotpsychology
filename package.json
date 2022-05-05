@@ -1,0 +1,26 @@
+{
+  "name": "a03-robotpsychology",
+  "version": "1.0.0",
+  "description": "An assignment for COMP 426 - Spring 22.",
+  "main": "server.js",
+  "scripts": {
+    "test": "node server.js --port==5555",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/comp426-2022-spring/a03-robotpsychology.git"
+  },
+  "author": "Ali Alrabeah",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/comp426-2022-spring/a03-robotpsychology/issues"
+  },
+  "homepage": "https://github.com/comp426-2022-spring/a03-robotpsychology#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "minimist": "^1.2.5",
+    "nodemon": "^2.0.15",
+    "yargs": "^17.3.1"
+  }
+}
